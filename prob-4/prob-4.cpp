@@ -19,7 +19,8 @@ bool checkpal(int n)
 int main()
 {
     int n1, n2, prod;
-    n1 = 99;
+    n1 = 999;
+    int largestPal = 0;
     // n2 = 5;
 
     for (int i = n1; i >= 1; i--)
@@ -27,13 +28,15 @@ int main()
         for (int j = n1; j >= 1; j--)
         {
             prod = i * j;
-        }
-        if (checkpal(prod))
-        {
-            cout << prod << " ";
+            if (checkpal(prod) && prod > largestPal)
+            {
+                largestPal = prod;
+            }
             
         }
+        
     }
 
+    cout << largestPal;
     
 }
